@@ -22,5 +22,11 @@ def print_menu():
     print('1. CHECK IN')
     print('2. keluar program')
     print()
+    
+
 
 print_menu()
+
+pilihan = Input("Pilih yang anda inginkan:  ")
+
+
