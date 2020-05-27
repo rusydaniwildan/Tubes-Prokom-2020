@@ -129,3 +129,5 @@ while iterasi == True:
         iterasi = False
     else :
         iterasi = True
+        
+#lanjut list identitas
