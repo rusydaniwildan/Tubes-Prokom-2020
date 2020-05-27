@@ -1,7 +1,7 @@
 
 
 
-
+import sys
 import os
 
 import datetime
@@ -42,7 +42,7 @@ def sistem():
     if pilihan == "1":
         print("Dimohon mengisi tanggal")
     else :
-        quit()
+        sys.exit()
 sistem()
     
 
