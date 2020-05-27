@@ -32,6 +32,7 @@ def print_menu():
 print_menu()
 
  
+#masuk sistem
 def sistem():
     print('Pilih yang anda inginkan ?')
     print()
