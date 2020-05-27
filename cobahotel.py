@@ -45,7 +45,8 @@ def sistem():
         quit()
 sistem()
     
-    
+
+#waktu inap
 def waktuinap(): 
     print('\t','Masukkan tanggal CHECK-IN')
     tanggalmasuk = int(input("Masukkan TANGGAL (1-31):"))
@@ -65,6 +66,7 @@ def waktuinap():
 waktuinap()
 
 
+#jumlah orang
 def jumlahorang():
     Dewasa = input("Masukkan jumlah dewasa(0-5): ")
     Anak = input("Masukan jumlah anak(0-5) ")
