@@ -1,5 +1,12 @@
 import os
 
+import datetime
+
+lama_hari=0
+
+def waktuinap():
+    x=datetime.datetime.now()
+    
 def print_menu():
     print(1* "-")
     print()
@@ -23,10 +30,17 @@ def print_menu():
     print('2. keluar program')
     print()
     
+    tanggalmasuk = int(input("Masukkan TANGGAL (1-31):"))
+    bulanmasuk = int(input("Masukkan BULAN (1-12):"))
+    tahunmasuk = int(input("Masukkan TAHUN (2020-2050):"))
+    
+    keluar = datetime.datetime.now()
+    masuk = datetime.datetime(tahunmasuk, bulanmasuk, tanggalmasuk)
+    lama = keluar - masuk
 
 
 print_menu()
 
 pilihan = Input("Pilih yang anda inginkan:  ")
-
+if pilihan == "1.CHECK IN":
 
