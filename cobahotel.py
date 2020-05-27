@@ -9,6 +9,7 @@ import datetime
 lama_hari=0
 
 
+#selamat datang
 def print_menu():
     print(1* "-")
     print()
