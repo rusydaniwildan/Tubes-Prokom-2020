@@ -78,7 +78,7 @@ elif jenis == "2":
             harga = randint(680, 720)
             print("Tarif",harga,".000 rupiah")
         
-else:
+if jenis == "3":
     bed = input("Queen atau Twin? ")
     if bed == "Queen":
         from random import randint
