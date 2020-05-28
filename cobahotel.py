@@ -74,7 +74,7 @@ def jumlahorang():
     print("Jumlah penghuni kamar sebanyak", Dewasa, "dewasa, ", Anak, "anak, dan ", Bayi, "bayi")
 jumlahorang()
     
-
+#tipe kamar
 def jenis():   
     print('Jenis kamar hotel?')
     print()
@@ -123,7 +123,7 @@ def jenis():
                 harga = randint(920, 980)
                 print("Tarif",harga,".000 rupiah")
 jenis()
-
+#identitas diri
 iterasi = True
 print("WAJIB MEMPUNYAI IDENTITAS JIKA AKAN MELAKUKAN PEMBAYARAN!")
 
@@ -135,6 +135,9 @@ while iterasi == True:
         iterasi = True
         
 #lanjut list identitas
+
+
+
 #jenis pembayaran
 def pembayaran():
     print("SILAKAN MELAKUKAN PEMBAYARAN")
