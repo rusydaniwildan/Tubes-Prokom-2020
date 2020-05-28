@@ -1,6 +1,13 @@
 
 
 
+
+
+
+
+
+
+
 import sys
 import os
 
@@ -31,6 +38,9 @@ def print_menu():
     
 print_menu()
 
+
+  
+print()  
  
 #masuk sistem
 def sistem():
@@ -43,8 +53,12 @@ def sistem():
         print("Dimohon mengisi tanggal")
     else :
         sys.exit()
+        
 sistem()
     
+
+print("--------------------")  
+print()  
 
 #waktu inap
 def waktuinap(): 
@@ -66,85 +80,124 @@ def waktuinap():
 waktuinap()
 
 
+print("--------------------")  
+print()  
+
 #jumlah orang
 def jumlahorang():
-    Dewasa = input("Masukkan jumlah dewasa(0-5): ")
-    Anak = input("Masukan jumlah anak(0-5) ")
-    Bayi = input("Masukkan jumlah bayi(0-5) ")
+    print('\t',"Masukkan jumlah penghuni kamar")
+    Dewasa = input("Jumlah dewasa(0-5): ")
+    Anak = input("Jumlah anak(0-5): ")
+    Bayi = input("Jumlah bayi(0-5): ")
     print("Jumlah penghuni kamar sebanyak", Dewasa, "dewasa, ", Anak, "anak, dan ", Bayi, "bayi")
+    
 jumlahorang()
     
+
+print("--------------------")  
+print()  
     
 #tipe kamar hotel
 def jenis():   
-    print('Jenis kamar hotel?')
+    print('\t',"Pilih jenis hotel yang anda inginkan")
     print()
-    print('1. Reguler')
-    print('2. Deluxe')
-    print('3. Suite')
+    print('Jenis kamar hotel (1-3)?')
+    print()
+    from random import randint
+    for _ in range(1):
+        jumlahk = randint(0, 20)
+        print('1. Reguler -', jumlahk,"Available")
+    from random import randint
+    for _ in range(1):
+        jumlahk = randint(0, 15)
+        print('2. Deluxe -', jumlahk,"Available")
+    from random import randint
+    for _ in range(1):
+        jumlahk = randint(0, 10)
+        print('3. Suite -', jumlahk,"Available")
     print()
         
     jenis = input("Jenis kamar hotel? ")
     if jenis == "1":
-        bed = input("Queen atau Twin? ")
-        if bed == "Queen":
+        bed = input("1.Queen atau 2.Twin (1/2)? ")
+        if bed == "1":
             from random import randint
             for _ in range(1):
                 harga = randint(400, 450)
                 print("Tarif",harga,".000 rupiah")
-        if bed == "Twin":
+        elif bed == "2":
             from random import randint
             for _ in range(1):
                 harga = randint(420, 460)
                 print("Tarif",harga,".000 rupiah")
         
     elif jenis == "2":
-        bed = input("Queen atau Twin? ")
-        if bed == "Queen":
+        bed = input("1.Queen atau 2.Twin (1/2)? ")
+        if bed == "1":
              from random import randint
              for _ in range(1):
                 harga = randint(650, 700)
                 print("Tarif",harga,".000 rupiah")
-        if bed == "Twin":
+        elif bed == "2":
             from random import randint
             for _ in range(1):
                 harga = randint(680, 720)
                 print("Tarif",harga,".000 rupiah")
         
-    if jenis == "3":
-        bed = input("Queen atau Twin? ")
-        if bed == "Queen":
+    elif jenis == "3":
+        bed = input("1.Queen atau 2.Twin (1/2)? ")
+        if bed == "1":
             from random import randint
             for _ in range(1):
                 harga = randint(900, 960)
                 print("Tarif",harga,".000 rupiah")
-        if bed == "Twin":
+        elif bed == "2":
             from random import randint
             for _ in range(1):
                 harga = randint(920, 980)
                 print("Tarif",harga,".000 rupiah")
+                
 jenis()
 
 
+print("--------------------")  
+print()  
+
 #identitas diri
 iterasi = True
-print("WAJIB MEMPUNYAI IDENTITAS JIKA AKAN MELAKUKAN PEMBAYARAN!")
+print('\t',"WAJIB MEMPUNYAI IDENTITAS JIKA AKAN MELAKUKAN PEMBAYARAN!")
 
 while iterasi == True:
     identitas = input("Apakah anda mempunyai identitas(KTP/Paspor/SIM)? (y/n)")
     if identitas =="y":
         iterasi = False
     else :
-        iterasi = True      
+        iterasi = True 
+        
+        
+print("--------------------")  
+print()   
+  
 #list identitas diri 
-nama = input("Nama :")
-no_telp = input("No Telp :")
-alamat = input("alamat :")
+print('\t',"Mohon untuk mengisi identitas dengan benar")
+nama = input("Nama : ")
+nomor_id = input("Nomor ID : ")
+no_telp = input("No Telp : ")
+alamat = input("Alamat : ")
+identitas = ['Nama:', nama,
+             'Nomor ID:', nomor_id ,
+             'No Telp:', no_telp,
+             'Alamat: ', alamat]
+print(identitas)
+print("Kebenaran isi identitas ini akan menjadi jaminan")
 
+
+print("--------------------")  
+print()  
 
 #jenis pembayaran
 def pembayaran():
-    print("SILAKAN MELAKUKAN PEMBAYARAN")
+    print('\t',"SILAKAN MELAKUKAN PEMBAYARAN")
     print()
     print("Pilih metode pembayaran yang akan Anda lakukan:")
     print('1. Cash')
@@ -196,4 +249,4 @@ def pembayaran():
                 else :
                     sys.exit()
 
-pembayaran()  
+pembayaran() 
