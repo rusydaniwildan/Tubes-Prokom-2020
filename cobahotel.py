@@ -132,11 +132,11 @@ while iterasi == True:
     if identitas =="y":
         iterasi = False
     else :
-        iterasi = True
-        
-#lanjut list identitas
-
-
+        iterasi = True      
+#list identitas diri 
+nama = input("Nama :")
+no_telp = input("No Telp :")
+alamat = input("alamat :")
 
 #jenis pembayaran
 def pembayaran():
