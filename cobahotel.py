@@ -170,6 +170,22 @@ def pembayaran():
                 Mohon maaf sisa saldo Anda tidak mencukupi untuk melakukan reservasi ini.
                 Silahkan gunakan debit card lain atau menggunakan metode pembayaran lain
                 """)
-                iterasi = True
+                ubah = input ('Ingin mengubah metode pembayaran atau mengganti debit card?')
+                if ubah == 'y':
+                    change = input('Ubah metode pembayaran menjadi cash?')
+                    if change == 'y':
+                        print("""
+                        Terima kasih telah melakukan reservasi di hotel kami
+                        Selamat menikmati penginapan yang nyaman
+                        Semoga hari Anda menyenangkan:)
+                        """)
+                    else :
+                        ganti = input ('Ingin mengganti debit card?')
+                        if ganti == 'y':
+                            iterasi = True
+                        else :
+                            sys.exit()
+                else :
+                    sys.exit()
 
 pembayaran()  
