@@ -135,3 +135,41 @@ while iterasi == True:
         iterasi = True
         
 #lanjut list identitas
+#jenis pembayaran
+def pembayaran():
+    print("SILAKAN MELAKUKAN PEMBAYARAN")
+    print()
+    print("Pilih metode pembayaran yang akan Anda lakukan:")
+    print('1. Cash')
+    print('2. Debit Card') 
+    
+    pilih = input("Pilih yang anda inginkan (1/2):  ")
+    if pilih == "1":
+        print("""
+        Terima kasih telah melakukan reservasi di hotel kami
+        Selamat menikmati penginapan yang nyaman
+        Semoga hari Anda menyenangkan:)
+        """)
+
+
+    else:
+        iterasi = True
+        while iterasi == True:
+            saldo = input('Apakah saldo mencukupi?')
+            if saldo == 'y':
+                print("""
+                Terima kasih telah melakukan reservasi di hotel kami
+                Selamat menikmati penginapan yang nyaman
+                Semoga hari Anda menyenangkan:)
+                """)
+                iterasi = False
+ 
+
+            else :
+                print ("""
+                Mohon maaf sisa saldo Anda tidak mencukupi untuk melakukan reservasi ini.
+                Silahkan gunakan debit card lain atau menggunakan metode pembayaran lain
+                """)
+                iterasi = True
+
+pembayaran()  
