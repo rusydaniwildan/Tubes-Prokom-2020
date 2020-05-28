@@ -74,7 +74,7 @@ def jumlahorang():
     print("Jumlah penghuni kamar sebanyak", Dewasa, "dewasa, ", Anak, "anak, dan ", Bayi, "bayi")
 jumlahorang()
     
-#tipe kamar
+#tipe kamar hotel
 def jenis():   
     print('Jenis kamar hotel?')
     print()
@@ -123,6 +123,7 @@ def jenis():
                 harga = randint(920, 980)
                 print("Tarif",harga,".000 rupiah")
 jenis()
+
 #identitas diri
 iterasi = True
 print("WAJIB MEMPUNYAI IDENTITAS JIKA AKAN MELAKUKAN PEMBAYARAN!")
@@ -144,8 +145,9 @@ def pembayaran():
     print()
     print("Pilih metode pembayaran yang akan Anda lakukan:")
     print('1. Cash')
-    print('2. Debit Card') 
+    print('2. Debit Card')
     
+    #pembayaran dengan Cash
     pilih = input("Pilih yang anda inginkan (1/2):  ")
     if pilih == "1":
         print("""
@@ -154,7 +156,7 @@ def pembayaran():
         Semoga hari Anda menyenangkan:)
         """)
 
-
+    #pembayaran dengan Debit Card
     else:
         iterasi = True
         while iterasi == True:
@@ -167,7 +169,7 @@ def pembayaran():
                 """)
                 iterasi = False
  
-
+            #saldo tidak mencukupi
             else :
                 print ("""
                 Mohon maaf sisa saldo Anda tidak mencukupi untuk melakukan reservasi ini.
