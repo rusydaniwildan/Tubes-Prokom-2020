@@ -216,7 +216,7 @@ def pembayaran():
     else:
         iterasi = True
         while iterasi == True:
-            saldo = input('Apakah saldo mencukupi?')
+            saldo = input('Apakah saldo mencukupi? (y/n)')
             if saldo == 'y':
                 print("""
                 Terima kasih telah melakukan reservasi di hotel kami
