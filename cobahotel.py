@@ -315,6 +315,28 @@ while loop:
                 Selamat menikmati penginapan yang nyaman
                 Semoga hari Anda menyenangkan:)
                 """)
+             else:
+                                os.sys('cls')
+                                print('Gunakan pembayaran Cash saja')
+                        else :
+                            os.sys('cls')
+                else :
+                    
+                    sys.exit()     
+      
+        ulang =''
+        while ulang!= 'y' and ulang!= 't':
+            ulang = input('Apakah anda ingin memesan kamar lagi [Y/T] : ')
+            if ulang == 'y':
+                os.system('cls')
+                print ('Silahkan pilih lagi')
+            elif ulang =='t':
+                print('Terimakasih telah melakukan reservasi di Hotel kami :)')
+                exit()
+
+
+exit()
+   
 
 
 
