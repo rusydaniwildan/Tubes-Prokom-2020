@@ -1,3 +1,13 @@
+#
+#
+#
+#
+#
+#
+
+
+
+
 from datetime import datetime, date
 import math
 import os
@@ -164,10 +174,8 @@ while loop:
                 checkin = datetime.strptime(tanggal, "%Y %m %d")
             except ValueError:
                 print("Harus berformat \"<Tahun> <bulan> <hari>\"")
-               
-                 while checkout is None:
-            tanggal = input("Masukkan tanggal CheckOut? ")
-
+            while checkout is None:
+                tanggal = input("Masukkan tanggal CheckOut? ")
             try:
                 checkout = datetime.strptime(tanggal, "%Y %m %d")
             except ValueError:
@@ -315,15 +323,36 @@ while loop:
                 Selamat menikmati penginapan yang nyaman
                 Semoga hari Anda menyenangkan:)
                 """)
-             else:
+            else :
+                print ("""
+                Mohon maaf sisa saldo Anda tidak mencukupi untuk melakukan reservasi ini.
+                Silahkan gunakan debit card lain atau menggunakan metode pembayaran lain
+                """)
+                ubah = input ('Ingin mengubah metode pembayaran atau mengganti debit card? [y/n]: ')
+                if ubah == 'y':
+                    change = input('Ubah metode pembayaran menjadi cash? [y/n]: ')
+                    if change == 'y':
+                        os.sys('cls')
+                        continue
+                    else :
+                        ganti = input ('Ingin mengganti debit card? [y/n]: ')
+                        if ganti == 'y':
+                            saldo = input('Apakah saldo mencukupi? [y/n]: ')
+                            if saldo == 'y':
+                                print("""
+                                Terima kasih telah melakukan reservasi di hotel kami
+                                Selamat menikmati penginapan yang nyaman
+                                Semoga hari Anda menyenangkan:)
+                                """)
+                            else:
                                 os.sys('cls')
                                 print('Gunakan pembayaran Cash saja')
                         else :
                             os.sys('cls')
                 else :
                     
-                    sys.exit()     
-      
+                    sys.exit()
+                    
         ulang =''
         while ulang!= 'y' and ulang!= 't':
             ulang = input('Apakah anda ingin memesan kamar lagi [Y/T] : ')
@@ -335,7 +364,6 @@ while loop:
                 exit()
 
 
-               
 exit()
    
 
