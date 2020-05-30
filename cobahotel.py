@@ -285,7 +285,36 @@ while loop:
         print("Pilih metode pembayaran yang akan Anda lakukan:")
         print('1. Cash')
         print('2. Debit Card') 
+        
+        pilih = input("Pilih yang anda inginkan (1/2):  ")
+        if pilih == "1":
+            cash = int(input('Uang dari penginap: Rp. '))
+            tarif3 = int(input('Biaya hotel: Rp.'))
+            kurang = str(tarif3 - cash)
+            kembali = str(cash - tarif3)
+            if (cash > tarif3):
+                print ('Jumlah kembalian adalah :'+ 'Rp.' + str(kembali)+',00-')
+                print("""
+            Terima kasih telah melakukan reservasi di hotel kami
+            Selamat menikmati penginapan yang nyaman
+            Semoga hari Anda menyenangkan:)
+            """)
+            
+            else:
+                print ('Maaf uang anda kurang sebesar :'+ 'Rp.' + str(kurang)+',00-')
+                os.sys('cls')
+                print('Pastikan uang anda cukup')
+                continue
 
+
+        else:
+            saldo = input('Apakah saldo mencukupi? [y/n]: ')
+            if saldo == 'y':
+                print("""
+                Terima kasih telah melakukan reservasi di hotel kami
+                Selamat menikmati penginapan yang nyaman
+                Semoga hari Anda menyenangkan:)
+                """)
 
 
 
