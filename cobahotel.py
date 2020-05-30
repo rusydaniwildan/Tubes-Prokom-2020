@@ -252,10 +252,11 @@ while loop:
 
     else:
         print('Pilihan yang anda pilih salah, silahkan coba lagi')
+        #ketika resepsionis salah meng inputkan nomor (selain 1-4)
         continue
         
         break
-    
+    #masuk kebagian kwitansi pembayaran
     print()
     print()
     print('\t','KWITANSI PEMBAYARAN RESERVASI HOTEL')
@@ -285,6 +286,7 @@ while loop:
     print('=======================================================')
 
     def pengecekanUlang():
+    #berfungsi agar memastikan data yang diinputkan oleh resepsionis benar
         print('Silahkan cek data diatas terlebih dahulu')
         pilih = input("Apakah data tersebut sudah sesuai? [y/n]: ")
         if pilih == 'y':
@@ -293,9 +295,12 @@ while loop:
             os.system('cls')
             print('Silahkan Ulang dari awal, Pastikan Data yang anda isi BENAR')
             sys.exit()
+            #ketika terjadi kesalahan dalam pengisian data, program akan mengulan dari awal
 
     pengecekanUlang()
 
+    #masuk ke bagian pembayaran
+    #resepsionis akan menawarkan 2 opsi pembayaran
     while loop: 
         print("[SILAHKAN MELAKUKAN PEMBAYARAN]")
         print()
@@ -306,11 +311,14 @@ while loop:
         pilih = input("Pilih yang anda inginkan (1/2):  ")
         if pilih == "1":
             cash = int(input('Uang dari penginap: Rp. '))
+            #resepsionis menginputkan uang yang diberikan oleh tamu/penginap
             tarif3 = int(input('Biaya hotel: Rp.'))
+            #resepsionis menginputkan biaya hotel, sesuai pada kwitansi
             kurang = str(tarif3 - cash)
             kembali = str(cash - tarif3)
             if (cash > tarif3):
                 print ('Jumlah kembalian adalah :'+ 'Rp.' + str(kembali)+',00-')
+                #program akan menampilkan kembalian yang harus diberikan kepada tamu/penginap
                 print("""
             Terima kasih telah melakukan reservasi di hotel kami
             Selamat menikmati penginapan yang nyaman
@@ -319,6 +327,7 @@ while loop:
             
             else:
                 print ('Maaf uang anda kurang sebesar :'+ 'Rp.' + str(kurang)+',00-')
+                #program akan menampilkan kekurangan uang yang harus dibayarkan lagi oleh tamu/penginap
                 os.sys('cls')
                 print('Pastikan uang anda cukup')
                 continue
@@ -327,24 +336,31 @@ while loop:
         else:
             saldo = input('Apakah saldo mencukupi? [y/n]: ')
             if saldo == 'y':
+            #respsionis akan mengambil kartu debit dari tamu/penginap
+            #jika kartu debit dapat digunakan (saldo cukup) , resepsionis akan menginputkan 'y'
                 print("""
                 Terima kasih telah melakukan reservasi di hotel kami
                 Selamat menikmati penginapan yang nyaman
                 Semoga hari Anda menyenangkan:)
                 """)
             else :
+            #respsionis akan mengambil kartu debit dari tamu/penginap
+            #jika kartu debit tidak dapat digunakan (saldo tidak cukup) , resepsionis akan menginputkan 'n'
                 print ("""
                 Mohon maaf sisa saldo Anda tidak mencukupi untuk melakukan reservasi ini.
                 Silahkan gunakan debit card lain atau menggunakan metode pembayaran lain
                 """)
                 ubah = input ('Ingin mengubah metode pembayaran atau mengganti debit card? [y/n]: ')
+                #tamu/penginap dapat mengubah metode pembayaran / mengganti karti debit
                 if ubah == 'y':
                     change = input('Ubah metode pembayaran menjadi cash? [y/n]: ')
+                    #menawarkan tamu/penginap untuk mengubah pembayaran menjadi cash
                     if change == 'y':
                         os.sys('cls')
                         continue
                     else :
                         ganti = input ('Ingin mengganti debit card? [y/n]: ')
+                        #menawarkan tamu untuk mengganti debit card
                         if ganti == 'y':
                             saldo = input('Apakah saldo mencukupi? [y/n]: ')
                             if saldo == 'y':
@@ -356,6 +372,8 @@ while loop:
                             else:
                                 os.sys('cls')
                                 print('Gunakan pembayaran Cash saja')
+                                #ketika kartu debit tamu/penginap yang ke 2 masih tetap kurang saldonya
+                                #tamu/penginap akan disarankan untuk menggunakan metode cash saja
                         else :
                             os.sys('cls')
                 else :
@@ -364,13 +382,16 @@ while loop:
                     
         ulang =''
         while ulang!= 'y' and ulang!= 't':
+            #resepsionis akan menanyakan kembali kepada tamu/penginap ,
             ulang = input('Apakah anda ingin memesan kamar lagi [Y/T] : ')
             if ulang == 'y':
                 os.system('cls')
                 print ('Silahkan pilih lagi')
+                #ketika ingin memesan lagi, program akan mengulang dari awal
             elif ulang =='t':
                 print('Terimakasih telah melakukan reservasi di Hotel kami :)')
                 exit()
+            #program selesai
 
 
 exit()
