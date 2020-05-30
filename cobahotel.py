@@ -193,6 +193,98 @@ while loop:
             print('Waktu yang andah isi salah')
             continue
 
+    elif (tipe == 4):
+        kamar = 'President suite'
+        tarif = ['355.000','485.000','505.000','635.000','775.000','885.000','990.000']
+        os.system('cls')
+        while checkin is None:
+            tanggal = input("Masukkan tanggal CheckIn? ")
+            print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
+            try:
+                checkin = datetime.strptime(tanggal, "%Y %m %d")
+            except ValueError:
+                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+
+        while checkout is None:
+            tanggal = input("Masukkan tanggal CheckOut? ")
+
+            try:
+                checkout = datetime.strptime(tanggal, "%Y %m %d")
+            except ValueError:
+                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+        waktuMenginap = checkout - checkin
+        waktu =(waktuMenginap.days)
+        if (waktu==1):
+            tarif2=tarif[0]
+        elif (waktu==2):
+            tarif2=tarif[1]
+        elif (waktu==3):
+            tarif2=tarif[2]
+        elif (waktu==4):
+            tarif2=tarif[3]
+        elif (waktu==5):
+            tarif2=tarif[4]
+        elif (waktu==6):
+            tarif2=tarif[5]
+        elif (waktu==7):
+            tarif2=tarif[6]
+        else:
+            os.system('cls')   
+            print('Waktu yang andah isi salah')
+            continue
+
+    else:
+        print('Pilihan yang anda pilih salah, silahkan coba lagi')
+        continue
+        
+        break
+    
+    print()
+    print()
+    print('\t','KWITANSI PEMBAYARAN RESERVASI HOTEL')
+    print('---------------------------------------------')
+    print()
+    print('\t','Nama : '+ str(nama))
+    print()
+    print('\t','No HP : (+62)'+ str(nohp))
+    print()
+    print('\t','No identitas : '+ str(kk))
+    print()
+    print('\t','TTL : '+ str(tl) + ','+ str(tt))
+    print()
+    print('\t','Tipe kamar : '+ str(kamar))
+    print()
+    print('\t','Waktu : '+ str(waktu)+ ' Malam')
+    print()
+    print('\t','Biaya : '+ 'Rp.' + str(tarif2)+',00-')
+    print()
+    print('\t','Bayar dengan uang pas')
+    print()
+    print()
+    print('Terimakasih atas kepercayaan yang anda berikan kepada kami, semoga anda senang')
+    print()
+    print('Mohon maaf apabilan pelayanan kami kurang maksimal.')
+    print()
+    print('=======================================================')
+
+    def pengecekanUlang():
+        print('Silahkan cek data diatas terlebih dahulu')
+        pilih = input("Apakah data tersebut sudah sesuai? [y/n]: ")
+        if pilih == 'y':
+            print()
+        else:
+            os.system('cls')
+            print('Silahkan Ulang dari awal, Pastikan Data yang anda isi BENAR')
+            sys.exit()
+
+    pengecekanUlang()
+
+    while loop: 
+        print("[SILAHKAN MELAKUKAN PEMBAYARAN]")
+        print()
+        print("Pilih metode pembayaran yang akan Anda lakukan:")
+        print('1. Cash')
+        print('2. Debit Card') 
 
 
 
