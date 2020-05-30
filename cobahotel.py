@@ -15,7 +15,7 @@ import sys
 checkin, checkout = None, None
 loop = True
 
-def print_menu():
+def print_menu(): # tampilan menu awal
     print()
     print('\t','      HOTEL MELATI SOLO BARU ')
     print()
@@ -36,13 +36,15 @@ def print_menu():
     print('1. CHECK IN')
     print('2. keluar program')
     print()
+    
+#program dimulai
 
 while loop:
-    print_menu()
+    print_menu() #memanggil def menu diatas
     pilihan = int(input('Masukan pilihan [1/2]: '))
-    print()
-    os.system('cls')
-    if (pilihan == 1):
+    print() 
+    os.system('cls') #membersihkan layar dalam shell
+    if (pilihan == 1):  #ketika memilih 'checkIn'
         print()
         print('\t','[ ISI BIODATA PENGINAP ]')
         print('--------------------------------')
@@ -50,12 +52,14 @@ while loop:
         nama = input('Masukkan nama lengkap penginap : ').upper()
         nohp = input('Masukkan No HP penginap : +62 ')
         if len(nohp) != 4 and len (nohp) != 5: 
+            # ketika no hp tidak sama dengan 4/5 digit, program akan menolak.
             os.system('cls')
             print('No Hp anda tidak terdaftar')
             continue
         ktp = input ('Apakah anda memiliki kartu identitas ktp/sim (y/n) : ')
         if ktp == 'n':
-            sys.exit('\nError : Anda harus memuliki kartu identitas untuk MENGINAP')        
+            sys.exit('\nError : Anda harus memuliki kartu identitas untuk MENGINAP')      
+             # penginap/tamu harus memiliki kartu identitas untuk menginap, jika tidak punya, TIDAK boleh menginap.
         elif ktp == 'y':
             kk = input('Masukkan No identitas kartu : ')
             tl = input("Masukkan Tempat lahir anda : ").upper()
@@ -71,6 +75,7 @@ while loop:
     else:
         print('Pilihan yang anda masukkan salah, silahkan coba lagi')
         continue
+    #mengisi tipe kamar sesuai keinginan penginap/tamu
     print()
     print('\t','ISI TIPE KAMAR SESUAI DENGAN PILIHAN PENGINAP')
     print('======================================================')
@@ -85,14 +90,17 @@ while loop:
     if (tipe == 1):
         kamar = 'Regular'
         tarif = ['150.000','175.000','200.000','225.000','250.000','275.000','300.000']
+        #tarif (harga permalam) dalam berbentuk list, yang akan dipanggil.
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn? ")
             print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
             try:
                 checkin = datetime.strptime(tanggal, "%Y %m %d")
+                #format tanggal
             except ValueError:
                 print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                #ketika format tanggal yang dimasukkan tidak sesuai, akan memunculkan pesan tersebut.
 
         while checkout is None:
             tanggal = input("Masukkan tanggal CheckOut? ")
@@ -102,6 +110,7 @@ while loop:
             except ValueError:
                 print("Harus berformat \"<Tahun> <bulan> <hari>\"")
         waktuMenginap = checkout - checkin
+        #untuk menghitung rentang hari tamu menginap.
         waktu =(waktuMenginap.days)
         if (waktu==1):
             tarif2=tarif[0]
