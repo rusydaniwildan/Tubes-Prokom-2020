@@ -164,7 +164,34 @@ while loop:
                 checkin = datetime.strptime(tanggal, "%Y %m %d")
             except ValueError:
                 print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+               
+                 while checkout is None:
+            tanggal = input("Masukkan tanggal CheckOut? ")
 
+            try:
+                checkout = datetime.strptime(tanggal, "%Y %m %d")
+            except ValueError:
+                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+        waktuMenginap = checkout - checkin
+        waktu =(waktuMenginap.days)
+        if (waktu==1):
+            tarif2=tarif[0]
+        elif (waktu==2):
+            tarif2=tarif[1]
+        elif (waktu==3):
+            tarif2=tarif[2]
+        elif (waktu==4):
+            tarif2=tarif[3]
+        elif (waktu==5):
+            tarif2=tarif[4]
+        elif (waktu==6):
+            tarif2=tarif[5]
+        elif (waktu==7):
+            tarif2=tarif[6]
+        else:
+            os.system('cls')   
+            print('Waktu yang andah isi salah')
+            continue
 
 
 
