@@ -173,7 +173,7 @@ while loop:
 
     elif (tipe == 3):
         kamar = 'Suite'
-        tarif = ['185.000','285.000','305.000','435.000','575.000','885.000','910.000']
+        tarif = ['185.000','370.000','555.000','740.000','925.000','1.110.000','1.295.000']
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn : ")
@@ -211,7 +211,7 @@ while loop:
 
     elif (tipe == 4):
         kamar = 'President suite'
-        tarif = ['355.000','485.000','505.000','635.000','775.000','885.000','990.000']
+        tarif = ['355.000','710.000','1.065.000','1.420.000','1.775.000','2.130.000','2.485.000']
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn : ")
