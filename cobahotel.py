@@ -88,7 +88,7 @@ while loop:
     os.system('cls')
     if (tipe == 1):
         kamar = 'Regular'
-        tarif = ['150.000','175.000','200.000','225.000','250.000','275.000','300.000']
+        tarif = ['150.000','300.000','450.000','600.000','750.000','900.000','1.050.000']
         #tarif (harga permalam) dalam berbentuk list, yang akan dipanggil.
         os.system('cls')
         while checkin is None:
