@@ -209,7 +209,45 @@ while loop:
             print('Waktu yang Anda isi salah')
             continue
 
-    
+    elif (tipe == 4):
+        kamar = 'President suite'
+        tarif = ['355.000','710.000','1.065.000','1.420.000','1.775.000','2.130.000','2.485.000']
+        os.system('cls')
+        while checkin is None:
+            tanggal = input("Masukkan tanggal CheckIn : ")
+            print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
+            try:
+                checkin = datetime.strptime(tanggal, "%d %m %Y")
+            except ValueError:
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
+
+        while checkout is None:
+            tanggal = input("Masukkan tanggal CheckOut : ")
+
+            try:
+                checkout = datetime.strptime(tanggal, "%d %m %Y")
+            except ValueError:
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
+        waktuMenginap = checkout - checkin
+        waktu =(waktuMenginap.days)
+        if (waktu==1):
+            tarif2=tarif[0]
+        elif (waktu==2):
+            tarif2=tarif[1]
+        elif (waktu==3):
+            tarif2=tarif[2]
+        elif (waktu==4):
+            tarif2=tarif[3]
+        elif (waktu==5):
+            tarif2=tarif[4]
+        elif (waktu==6):
+            tarif2=tarif[5]
+        elif (waktu==7):
+            tarif2=tarif[6]
+        else:
+            os.system('cls')   
+            print('Waktu yang Anda isi salah')
+            continue
 
     else:
         print('Pilihan yang Anda pilih salah, silahkan coba lagi')
