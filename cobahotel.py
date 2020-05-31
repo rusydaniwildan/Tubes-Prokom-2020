@@ -92,22 +92,22 @@ while loop:
         #tarif (harga permalam) dalam berbentuk list, yang akan dipanggil.
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn (berformat yyyy mm dd):  ")
+            tanggal = input("Masukkan tanggal CheckIn :  ")
             print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
             try:
-                checkin = datetime.strptime(tanggal, "%Y %m %d")
+                checkin = datetime.strptime(tanggal, "%d %m %Y")
                 #format tanggal
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
                 #ketika format tanggal yang dimasukkan tidak sesuai, akan memunculkan pesan tersebut.
 
         while checkout is None:
-            tanggal = input("Masukkan tanggal CheckOut (berformat yyyy mm dd):  ")
+            tanggal = input("Masukkan tanggal CheckOut :  ")
 
             try:
-                checkout = datetime.strptime(tanggal, "%Y %m %d")
+                checkout = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         #untuk menghitung rentang hari tamu menginap.
         waktu =(waktuMenginap.days)
@@ -136,20 +136,20 @@ while loop:
         tarif = ['155.000','185.000','205.000','235.000','275.000','285.000','310.000']
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn (berformat yyyy mm dd):  ")
+            tanggal = input("Masukkan tanggal CheckIn :  ")
             print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
             try:
-                checkin = datetime.strptime(tanggal, "%Y %m %d")
+                checkin = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
 
         while checkout is None:
-            tanggal = input("Masukkan tanggal CheckOut (berformat yyyy mm dd): ")
+            tanggal = input("Masukkan tanggal CheckOut : ")
 
             try:
-                checkout = datetime.strptime(tanggal, "%Y %m %d")
+                checkout = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
         if (waktu==1):
@@ -176,18 +176,18 @@ while loop:
         tarif = ['185.000','285.000','305.000','435.000','575.000','885.000','910.000']
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn (berformat yyyy mm dd): ")
+            tanggal = input("Masukkan tanggal CheckIn : ")
             print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
             try:
-                checkin = datetime.strptime(tanggal, "%Y %m %d")
+                checkin = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
             while checkout is None:
-                tanggal = input("Masukkan tanggal CheckOut (berformat yyyy mm dd): ")
+                tanggal = input("Masukkan tanggal CheckOut : ")
             try:
-                checkout = datetime.strptime(tanggal, "%Y %m %d")
+                checkout = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
         if (waktu==1):
@@ -214,20 +214,20 @@ while loop:
         tarif = ['355.000','485.000','505.000','635.000','775.000','885.000','990.000']
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn (berformat yyyy mm dd): ")
+            tanggal = input("Masukkan tanggal CheckIn : ")
             print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
             try:
-                checkin = datetime.strptime(tanggal, "%Y %m %d")
+                checkin = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
 
         while checkout is None:
-            tanggal = input("Masukkan tanggal CheckOut (berformat yyyy mm dd): ")
+            tanggal = input("Masukkan tanggal CheckOut : ")
 
             try:
-                checkout = datetime.strptime(tanggal, "%Y %m %d")
+                checkout = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
-                print("Harus berformat \"<Tahun> <bulan> <hari>\"")
+                print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
         if (waktu==1):
