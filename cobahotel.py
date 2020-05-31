@@ -21,7 +21,7 @@ def print_menu(): # tampilan menu awal
     print('\t','---------Selamat Datang----------')
     print()
     print('Jl.Solo baru No.900, kode pos 29112 No HP. 08232111')
-    print('\t','      Solo baru Surakarta')
+    print('\t','      Solo Baru Surakarta')
     print()
     print('\t',' Hotel bintang 3 dengan keunggulan: ')
     print('\t','           Nyaman')
@@ -30,7 +30,7 @@ def print_menu(): # tampilan menu awal
     print('\t','            Asri')
     print()
     print('======================================================')
-    print('Pilih yang anda inginkan ?')
+    print('Pilih yang Anda inginkan :')
     print()
     print('1. CHECK IN')
     print('2. keluar program')
@@ -46,23 +46,23 @@ while loop:
     if (pilihan == 1):  #ketika memilih 'checkIn'
         print()
         print('\t','[ ISI BIODATA PENGINAP ]')
-        print('--------------------------------')
+        print('------------------------------------')
         print()
         nama = input('Masukkan nama lengkap penginap : ').upper()
         nohp = input('Masukkan No HP penginap : +62 ')
         if len(nohp) != 4 and len (nohp) != 5: 
             # ketika no hp tidak sama dengan 4/5 digit, program akan menolak.
             os.system('cls')
-            print('No Hp anda tidak terdaftar')
+            print('No Hp Anda tidak terdaftar')
             continue
-        ktp = input ('Apakah anda memiliki kartu identitas ktp/sim (y/n) : ')
+        ktp = input ('Apakah Anda memiliki kartu identitas KTP/SIM (y/n) : ')
         if ktp == 'n':
-            sys.exit('\nError : Anda harus memuliki kartu identitas untuk MENGINAP')      
+            sys.exit('\nError : Anda harus memuliki kartu identitas untuk menginap')      
              # penginap/tamu harus memiliki kartu identitas untuk menginap, jika tidak punya, TIDAK boleh menginap.
         elif ktp == 'y':
             kk = input('Masukkan No identitas kartu : ')
-            tl = input("Masukkan Tempat lahir anda : ").upper()
-            tt = input ('Masukkan tanggal lahir anda : ')
+            tl = input("Masukkan Tempat lahir Anda : ").upper()
+            tt = input ('Masukkan tanggal lahir Anda : ')
             print()
             os.system('cls')
         else:
@@ -72,7 +72,7 @@ while loop:
     elif (pilihan == 2):
         exit()
     else:
-        print('Pilihan yang anda masukkan salah, silahkan coba lagi')
+        print('Pilihan yang Anda masukkan salah, silahkan coba lagi')
         continue
     #mengisi tipe kamar sesuai keinginan penginap/tamu
     print()
@@ -84,7 +84,7 @@ while loop:
     print('3. Suite')
     print('4. President suite')
 
-    tipe = int(input('Masukkan Tipe kamar yang anda pilih : '))
+    tipe = int(input('Masukkan tipe kamar yang Anda pilih : '))
     os.system('cls')
     if (tipe == 1):
         kamar = 'Regular'
@@ -133,7 +133,7 @@ while loop:
             sys.exit('\nError : Maksimal hanya menginap 7 hari')
     elif (tipe == 2):
         kamar = 'Deluxe'
-        tarif = ['155.000','185.000','205.000','235.000','275.000','285.000','310.000']
+        tarif = ['200.000','400.000','600.000','800.000','1.000.000','1.200.000','1.400.000']
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn :  ")
@@ -168,7 +168,7 @@ while loop:
             tarif2=tarif[6]
         else:
             os.system('cls')   
-            print('Waktu yang andah isi salah')
+            print('Waktu yang Anda isi salah')
             continue
 
     elif (tipe == 3):
@@ -206,7 +206,7 @@ while loop:
             tarif2=tarif[6]
         else:
             os.system('cls')   
-            print('Waktu yang andah isi salah')
+            print('Waktu yang Anda isi salah')
             continue
 
     elif (tipe == 4):
@@ -246,11 +246,11 @@ while loop:
             tarif2=tarif[6]
         else:
             os.system('cls')   
-            print('Waktu yang andah isi salah')
+            print('Waktu yang Anda isi salah')
             continue
 
     else:
-        print('Pilihan yang anda pilih salah, silahkan coba lagi')
+        print('Pilihan yang Anda pilih salah, silahkan coba lagi')
         #ketika resepsionis salah meng inputkan nomor (selain 1-4)
         continue
         
@@ -265,7 +265,7 @@ while loop:
     print()
     print('\t','No HP : (+62)'+ str(nohp))
     print()
-    print('\t','No identitas : '+ str(kk))
+    print('\t','No Identitas : '+ str(kk))
     print()
     print('\t','TTL : '+ str(tl) + ','+ str(tt))
     print()
@@ -278,10 +278,9 @@ while loop:
     print('\t','Bayar dengan uang pas')
     print()
     print()
-    print('Terimakasih atas kepercayaan yang anda berikan kepada kami, semoga anda senang')
+    print('Terima kasih atas kepercayaan yang Anda berikan kepada kami, semoga Anda senang')
     print()
-    print('Mohon maaf apabilan pelayanan kami kurang maksimal.')
-    print()
+
     print('=======================================================')
 
     def pengecekanUlang():
@@ -292,7 +291,7 @@ while loop:
             print()
         else:
             os.system('cls')
-            print('Silahkan Ulang dari awal, Pastikan Data yang anda isi BENAR')
+            print('Silahkan ulang dari awal, pastikan data yang Anda isi BENAR')
             sys.exit()
             #ketika terjadi kesalahan dalam pengisian data, program akan mengulan dari awal
 
@@ -307,7 +306,7 @@ while loop:
         print('1. Cash')
         print('2. Debit Card') 
         
-        pilih = input("Pilih yang anda inginkan (1/2):  ")
+        pilih = input("Pilih yang Anda inginkan (1/2):  ")
         if pilih == "1":
             cash = int(input('Uang dari penginap: Rp. '))
             #resepsionis menginputkan uang yang diberikan oleh tamu/penginap
@@ -325,7 +324,7 @@ while loop:
             """)
             
             else:
-                print ('Maaf uang anda kurang sebesar :'+ 'Rp.' + str(kurang)+',00-')
+                print ('Maaf uang Anda kurang sebesar :'+ 'Rp.' + str(kurang)+',00-')
                 #program akan menampilkan kekurangan uang yang harus dibayarkan lagi oleh tamu/penginap
                 os.sys('cls')
                 print('Pastikan uang anda cukup')
@@ -382,13 +381,13 @@ while loop:
         ulang =''
         while ulang!= 'y' and ulang!= 't':
             #resepsionis akan menanyakan kembali kepada tamu/penginap ,
-            ulang = input('Apakah anda ingin memesan kamar lagi [Y/T] : ')
+            ulang = input('Apakah anda ingin memesan kamar lagi [y/t] : ')
             if ulang == 'y':
                 os.system('cls')
                 print ('Silahkan pilih lagi')
                 #ketika ingin memesan lagi, program akan mengulang dari awal
             elif ulang =='t':
-                print('Terimakasih telah melakukan reservasi di Hotel kami :)')
+                print('Terimankasih telah melakukan reservasi di Hotel kami :)')
                 exit()
             #program selesai
 
