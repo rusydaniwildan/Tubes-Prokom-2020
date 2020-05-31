@@ -9,7 +9,6 @@
 
 
 from datetime import datetime, date
-import math
 import os
 import sys
 checkin, checkout = None, None
