@@ -183,8 +183,10 @@ while loop:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
-            while checkout is None:
+                
+         while checkout is None:
                 tanggal = input("Masukkan tanggal CheckOut : ")
+                
             try:
                 checkout = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
