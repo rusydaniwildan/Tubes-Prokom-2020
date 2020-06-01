@@ -50,8 +50,8 @@ while loop:
         print()
         nama = input('Masukkan nama lengkap penginap : ').upper()
         nohp = input('Masukkan No HP penginap : +62 ')
-        if len(nohp) != 4 and len (nohp) != 5: 
-            # ketika no hp tidak sama dengan 4/5 digit, program akan menolak.
+        if len(nohp) != 9 and len (nohp) != 12: 
+            # ketika no hp tidak sama dengan 9-12 digit, program akan menolak.
             os.system('cls')
             print('No Hp Anda tidak terdaftar')
             continue
@@ -62,7 +62,7 @@ while loop:
         elif ktp == 'y':
             kk = input('Masukkan No identitas kartu : ')
             tl = input("Masukkan Tempat lahir Anda : ").upper()
-            tt = input ('Masukkan tanggal lahir Anda : ')
+            tt = input ('Masukkan tanggal lahir Anda (dd-mm-yyyy) : ')
             print()
             os.system('cls')
         else:
@@ -70,7 +70,7 @@ while loop:
             input('\nError : Anda harus memilih antara (y/n)')
             continue
     elif (pilihan == 2):
-        exit()
+        sys.exit('\nError : Anda telah keluar program')
     else:
         print('Pilihan yang Anda masukkan salah, silahkan coba lagi')
         continue
@@ -271,6 +271,11 @@ while loop:
     print()
     print('\t','Tipe kamar : '+ str(kamar))
     print()
+    from random import randint
+    for _ in range(1):
+        kamar = randint(1, 20)
+        print('\t','Kunci kamar nomor :',kamar)
+    print()
     print('\t','Waktu : '+ str(waktu)+ ' Malam')
     print()
     print('\t','Biaya : '+ 'Rp.' + str(tarif2)+',00-')
@@ -388,7 +393,7 @@ while loop:
                 #ketika ingin memesan lagi, program akan mengulang dari awal
             elif ulang =='t':
                 print('Terimankasih telah melakukan reservasi di Hotel kami :)')
-                exit()
+                sys.exit()
             #program selesai
 
 
