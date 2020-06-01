@@ -9,6 +9,7 @@
 
 
 from datetime import datetime, date
+from random import randint
 import os
 import sys
 checkin, checkout = None, None
@@ -50,8 +51,8 @@ while loop:
         print()
         nama = input('Masukkan nama lengkap penginap : ').upper()
         nohp = input('Masukkan No HP penginap : +62 ')
-        if len(nohp) != 9 and len (nohp) != 12: 
-            # ketika no hp tidak sama dengan 9-12 digit, program akan menolak.
+        if len(nohp) != 11 and len (nohp) != 12: 
+            # ketika no hp tidak sama dengan 11/12 digit, program akan menolak.
             os.system('cls')
             print('No Hp Anda tidak terdaftar')
             continue
@@ -271,7 +272,6 @@ while loop:
     print()
     print('\t','Tipe kamar : '+ str(kamar))
     print()
-    from random import randint
     for _ in range(1):
         kamar = randint(1, 20)
         print('\t','Kunci kamar nomor :',kamar)
