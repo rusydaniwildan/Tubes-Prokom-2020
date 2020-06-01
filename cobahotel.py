@@ -70,7 +70,7 @@ while loop:
             input('\nError : Anda harus memilih antara (y/n)')
             continue
     elif (pilihan == 2):
-        sys.exit('\nError : Anda telah keluar program')
+        sys.exit('\nInformasi : Anda telah keluar program')
     else:
         print('Pilihan yang Anda masukkan salah, silahkan coba lagi')
         continue
