@@ -41,7 +41,7 @@ def print_menu(): # tampilan menu awal
 
 while loop:
     print_menu() #memanggil def menu diatas
-    pilihan = int(input('Masukan pilihan [1/2]: '))
+    pilihan = int(input('Masukkan pilihan [1/2]: '))
     print() 
     os.system('cls') #membersihkan layar dalam shell
     if (pilihan == 1):  #ketika memilih 'checkIn'
@@ -58,7 +58,7 @@ while loop:
             continue
         ktp = input ('Apakah Anda memiliki kartu identitas KTP/SIM (y/n) : ')
         if ktp == 'n':
-            sys.exit('\nError : Anda harus memuliki kartu identitas untuk menginap')      
+            sys.exit('\nError : Anda harus memiliki kartu identitas untuk menginap')      
              # penginap/tamu harus memiliki kartu identitas untuk menginap, jika tidak punya, TIDAK boleh menginap.
         elif ktp == 'y':
             kk = input('Masukkan No identitas kartu : ')
@@ -394,7 +394,7 @@ while loop:
                 print ('Silahkan pilih lagi')
                 #ketika ingin memesan lagi, program akan mengulang dari awal
             elif ulang =='t':
-                print('Terimankasih telah melakukan reservasi di Hotel kami :)')
+                print('Terimakasih telah melakukan reservasi di Hotel kami :)')
                 sys.exit()
             #program selesai
 
