@@ -34,7 +34,7 @@ def print_menu(): # tampilan menu awal
     print('Pilih yang Anda inginkan :')
     print()
     print('1. CHECK IN')
-    print('2. keluar program')
+    print('2. Keluar program')
     print()
     
 #program dimulai
@@ -51,8 +51,8 @@ while loop:
         print()
         nama = input('Masukkan nama lengkap penginap : ').upper()
         nohp = input('Masukkan No HP penginap : +62 ')
-        if len(nohp) != 11 and len (nohp) != 12: 
-            # ketika no hp tidak sama dengan 11/12 digit, program akan menolak.
+        if len(nohp) != 11 and len (nohp) != 13: 
+            # ketika no hp tidak sama dengan 11/13 digit, program akan menolak.
             os.system('cls')
             print('No Hp Anda tidak terdaftar')
             continue
@@ -85,16 +85,17 @@ while loop:
     print('3. Suite')
     print('4. President suite')
 
+    jenis = ['Regular','Deluxe ','Suite','President Suite']
+    #jenis kamar berbentuk list akan dipanggil sesuai pilihan penginjung
     tipe = int(input('Masukkan tipe kamar yang Anda pilih : '))
     os.system('cls')
     if (tipe == 1):
-        kamar = 'Regular'
-        tarif = ['150.000','300.000','450.000','600.000','750.000','900.000','1.050.000']
-        #tarif (harga permalam) dalam berbentuk list, yang akan dipanggil.
+        kamar = jenis[0]
+      
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn :  ")
-            print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
+     
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
                 #format tanggal
@@ -112,33 +113,15 @@ while loop:
         waktuMenginap = checkout - checkin
         #untuk menghitung rentang hari tamu menginap.
         waktu =(waktuMenginap.days)
-        if (waktu==1):
-            tarif2=tarif[0]
-        elif (waktu==2):
-            tarif2=tarif[1]
-        elif (waktu==3):
-            tarif2=tarif[2]
-        elif (waktu==4):
-            tarif2=tarif[3]
-        elif (waktu==5):
-            tarif2=tarif[4]
-        elif (waktu==6):
-            tarif2=tarif[5]
-        elif (waktu==7):
-            tarif2=tarif[6]
-        else:
-            try:
-                pass
-            except NameError:
-                print()            
-            sys.exit('\nError : Maksimal hanya menginap 7 hari')
+        tarif = (150000 * waktu)
+
     elif (tipe == 2):
-        kamar = 'Deluxe'
-        tarif = ['200.000','400.000','600.000','800.000','1.000.000','1.200.000','1.400.000']
+        kamar = jenis[1]
+
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn :  ")
-            print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
+ 
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
@@ -153,39 +136,22 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
-        if (waktu==1):
-            tarif2=tarif[0]
-        elif (waktu==2):
-            tarif2=tarif[1]
-        elif (waktu==3):
-            tarif2=tarif[2]
-        elif (waktu==4):
-            tarif2=tarif[3]
-        elif (waktu==5):
-            tarif2=tarif[4]
-        elif (waktu==6):
-            tarif2=tarif[5]
-        elif (waktu==7):
-            tarif2=tarif[6]
-        else:
-            os.system('cls')   
-            print('Waktu yang Anda isi salah')
-            continue
+        tarif = (200000 * waktu)
 
     elif (tipe == 3):
-        kamar = 'Suite'
-        tarif = ['185.000','370.000','555.000','740.000','925.000','1.110.000','1.295.000']
+        kamar = jenis[2]
+
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn : ")
-            print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
+       
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
                 
-         while checkout is None:
-                tanggal = input("Masukkan tanggal CheckOut : ")
+        while checkout is None: 
+            tanggal = input("Masukkan tanggal CheckOut : ")
                 
             try:
                 checkout = datetime.strptime(tanggal, "%d %m %Y")
@@ -193,32 +159,16 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
-        if (waktu==1):
-            tarif2=tarif[0]
-        elif (waktu==2):
-            tarif2=tarif[1]
-        elif (waktu==3):
-            tarif2=tarif[2]
-        elif (waktu==4):
-            tarif2=tarif[3]
-        elif (waktu==5):
-            tarif2=tarif[4]
-        elif (waktu==6):
-            tarif2=tarif[5]
-        elif (waktu==7):
-            tarif2=tarif[6]
-        else:
-            os.system('cls')   
-            print('Waktu yang Anda isi salah')
-            continue
+        tarif = (250000 * waktu)
+
 
     elif (tipe == 4):
-        kamar = 'President suite'
-        tarif = ['355.000','710.000','1.065.000','1.420.000','1.775.000','2.130.000','2.485.000']
+        kamar = jenis[3]
+     
         os.system('cls')
         while checkin is None:
             tanggal = input("Masukkan tanggal CheckIn : ")
-            print('(NOTES: MAKSIMAL MENGINAP 7 HARI)')
+            
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
             except ValueError:
@@ -233,31 +183,10 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
-        if (waktu==1):
-            tarif2=tarif[0]
-        elif (waktu==2):
-            tarif2=tarif[1]
-        elif (waktu==3):
-            tarif2=tarif[2]
-        elif (waktu==4):
-            tarif2=tarif[3]
-        elif (waktu==5):
-            tarif2=tarif[4]
-        elif (waktu==6):
-            tarif2=tarif[5]
-        elif (waktu==7):
-            tarif2=tarif[6]
-        else:
-            os.system('cls')   
-            print('Waktu yang Anda isi salah')
-            continue
+        tarif = (300000 * waktu)
 
-    else:
-        print('Pilihan yang Anda pilih salah, silahkan coba lagi')
-        #ketika resepsionis salah meng inputkan nomor (selain 1-4)
-        continue
         
-        break
+        
     #masuk kebagian kwitansi pembayaran
     print()
     print()
@@ -280,7 +209,7 @@ while loop:
     print()
     print('\t','Waktu : '+ str(waktu)+ ' Malam')
     print()
-    print('\t','Biaya : '+ 'Rp.' + str(tarif2)+',00-')
+    print('\t','Biaya : '+ 'Rp.' + str(tarif)+',00-')
     print()
     print('\t','Bayar dengan uang pas')
     print()
