@@ -86,7 +86,10 @@ while loop:
     print('4. President suite')
 
     jenis = ['Regular','Deluxe ','Suite','President Suite']
-    #jenis kamar berbentuk list akan dipanggil sesuai pilihan penginjung
+    #jenis kamar berbentuk list akan dipanggil sesuai pilihan pengunjung
+    jenisPerMalam = [150000, 200000, 250000, 300000]
+    #tarif permalam untuk setiap jenis kamar dalam bentuk list akan dipanggil untuk menentukan tarif akhir...
+    
     tipe = int(input('Masukkan tipe kamar yang Anda pilih : '))
     os.system('cls')
     if (tipe == 1):
@@ -113,7 +116,8 @@ while loop:
         waktuMenginap = checkout - checkin
         #untuk menghitung rentang hari tamu menginap.
         waktu =(waktuMenginap.days)
-        tarif = (150000 * waktu)
+        global tarif
+        tarif = (jenisPerMalam[0] * waktu)
 
     elif (tipe == 2):
         kamar = jenis[1]
@@ -136,7 +140,7 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
-        tarif = (200000 * waktu)
+        tarif = (jenisPerMalam[1] * waktu)
 
     elif (tipe == 3):
         kamar = jenis[2]
@@ -159,7 +163,7 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
-        tarif = (250000 * waktu)
+        tarif =(jenisPerMalam[2] * waktu)
 
 
     elif (tipe == 4):
@@ -183,7 +187,7 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
         waktuMenginap = checkout - checkin
         waktu =(waktuMenginap.days)
-        tarif = (300000 * waktu)
+        tarif = (jenisPerMalam[3] * waktu)
 
         
         
@@ -246,11 +250,10 @@ while loop:
         if pilih == "1":
             cash = int(input('Uang dari penginap: Rp. '))
             #resepsionis menginputkan uang yang diberikan oleh tamu/penginap
-            tarif3 = int(input('Biaya hotel: Rp.'))
-            #resepsionis menginputkan biaya hotel, sesuai pada kwitansi
-            kurang = str(tarif3 - cash)
-            kembali = str(cash - tarif3)
-            if (cash > tarif3):
+            
+            kurang = str(tarif - cash)
+            kembali = str(cash - tarif)
+            if (cash > tarif):
                 print ('Jumlah kembalian adalah :'+ 'Rp.' + str(kembali)+',00-')
                 #program akan menampilkan kembalian yang harus diberikan kepada tamu/penginap
                 print("""
