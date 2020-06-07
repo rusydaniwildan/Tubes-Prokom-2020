@@ -39,6 +39,7 @@ def print_menu(): # tampilan menu awal
     
 #program dimulai
 
+
 while loop:
     print_menu() #memanggil def menu diatas
     pilihan = int(input('Masukkan pilihan [1/2]: '))
@@ -51,7 +52,7 @@ while loop:
         print()
         nama = input('Masukkan nama lengkap penginap : ').upper()
         nohp = input('Masukkan No HP penginap : +62 ')
-        if len(nohp) != 11 and len (nohp) != 13: 
+        if len(nohp) != 2 and len (nohp) != 3: 
             # ketika no hp tidak sama dengan 11/13 digit, program akan menolak.
             os.system('cls')
             print('No Hp Anda tidak terdaftar')
@@ -73,8 +74,11 @@ while loop:
     elif (pilihan == 2):
         sys.exit('\nInformasi : Anda telah keluar program')
     else:
+        os.system('cls')
         print('Pilihan yang Anda masukkan salah, silahkan coba lagi')
         continue
+        
+        
     #mengisi tipe kamar sesuai keinginan penginap/tamu
     print()
     print('\t','ISI TIPE KAMAR SESUAI DENGAN PILIHAN PENGINAP')
@@ -189,6 +193,12 @@ while loop:
         waktu =(waktuMenginap.days)
         tarif = (jenisPerMalam[3] * waktu)
 
+    else:
+        print('Pilihan yang Anda pilih salah, silahkan coba lagi')
+        #ketika resepsionis salah meng inputkan nomor (selain 1-4)
+        continue
+        
+        break
         
         
     #masuk kebagian kwitansi pembayaran
@@ -332,8 +342,3 @@ while loop:
 
 
 exit()
-   
-
-
-
-
