@@ -51,9 +51,9 @@ while loop:
         print('------------------------------------')
         print()
         nama = input('Masukkan nama lengkap penginap : ').upper()
-        nohp = input('Masukkan No HP penginap : +62 ')
-        if len(nohp) != 2 and len (nohp) != 3: 
-            # ketika no hp tidak sama dengan 11/13 digit, program akan menolak.
+        nohp = input('Masukkan No HP penginap (9/10 digit) : +62 ')
+        if len(nohp) != 9 and len (nohp) != 10: 
+            # ketika no hp tidak sama dengan 9/10 digit, program akan menolak.
             os.system('cls')
             print('No Hp Anda tidak terdaftar')
             continue
