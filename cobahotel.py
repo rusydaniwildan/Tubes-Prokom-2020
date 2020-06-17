@@ -1,7 +1,7 @@
-#
-#
-#
-#
+# PROGRAM ALGORITMA RESERVASI HOTEL
+# DIGUNAKAN SEBAGAI TUGAS BESAR UAS PROGKOMP 2020
+# Dibuat oleh kelompok 2 kelas A
+# 
 #
 #
 
@@ -34,7 +34,8 @@ def print_menu(): # tampilan menu awal
     print('Pilih yang Anda inginkan :')
     print()
     print('1. CHECK IN')
-    print('2. Keluar program')
+    print('2. CHECK OUT')
+    print('3. Keluar program')
     print()
     
 #program dimulai
@@ -42,7 +43,7 @@ def print_menu(): # tampilan menu awal
 
 while loop:
     print_menu() #memanggil def menu diatas
-    pilihan = int(input('Masukkan pilihan [1/2]: '))
+    pilihan = int(input('Masukkan pilihan [1/2/3]: '))
     print() 
     os.system('cls') #membersihkan layar dalam shell
     if (pilihan == 1):  #ketika memilih 'checkIn'
@@ -72,6 +73,11 @@ while loop:
             input('\nError : Anda harus memilih antara (y/n)')
             continue
     elif (pilihan == 2):
+        print('\nSilahkan melunasi Biaya Hotel(yang telah dikurangi DP) dan mengembalikan kunci')
+        uname = input('Masukkan nama pemesan (sama yang tertera di bill): ')
+        print('\n==Terima kasih mr/mrs.', uname, 'sudah menginap di Hotel kami==')
+        sys.exit('\nInformasi : Selesai')
+    elif (pilihan == 3):
         sys.exit('\nInformasi : Anda telah keluar program')
     else:
         os.system('cls')
@@ -91,7 +97,7 @@ while loop:
 
     jenis = ['Regular','Deluxe ','Suite','President Suite']
     #jenis kamar berbentuk list akan dipanggil sesuai pilihan pengunjung
-    jenisPerMalam = [150000, 200000, 250000, 300000]
+    jenisPerMalam = [150000, 25000000, 400000, 500000]
     #tarif permalam untuk setiap jenis kamar dalam bentuk list akan dipanggil untuk menentukan tarif akhir...
     
     tipe = int(input('Masukkan tipe kamar yang Anda pilih : '))
@@ -263,15 +269,45 @@ while loop:
             
             kurang = str(tarif - cash)
             kembali = str(cash - tarif)
+            pas = str(cash == tarif)
             if (cash > tarif):
                 print ('Jumlah kembalian adalah :'+ 'Rp.' + str(kembali)+',00-')
                 #program akan menampilkan kembalian yang harus diberikan kepada tamu/penginap
-                print("""
-            Terima kasih telah melakukan reservasi di hotel kami
-            Selamat menikmati penginapan yang nyaman
-            Semoga hari Anda menyenangkan:)
-            """)
-            
+                bayar = input('Apakah anda akan melakukan pembayaran di awal/akhir? ')
+                if bayar == 'akhir':
+                    print('Pembayaran dilakukan saat check out dan wajib membayar DP minimal 25% dari tarif hotel tertera saat ini juga di kasir')
+                    print("""
+                          Terima kasih telah melakukan reservasi di hotel kami
+                          Selamat menikmati penginapan yang nyaman
+                          Semoga hari Anda menyenangkan:)
+                        """) 
+                else:  
+                    print('Pembayaran dilakukan saat ini juga di kasir')
+                    print("""
+                          Terima kasih telah melakukan reservasi di hotel kami
+                          Selamat menikmati penginapan yang nyaman
+                          Semoga hari Anda menyenangkan:)
+                        """) 
+                
+            elif (cash == tarif):
+                print ('Jumlah uang yang anda bayarkan pas')
+                #program akan menampilkan kembalian yang harus diberikan kepada tamu/penginap
+                bayar = input('Apakah anda akan melakukan pembayaran di awal/akhir? ')
+                if bayar == 'akhir':
+                    print('Pembayaran dilakukan saat check out dan wajib membayar DP minimal 25% dari tarif hotel tertera saat ini juga di kasir')
+                    print("""
+                          Terima kasih telah melakukan reservasi di hotel kami
+                          Selamat menikmati penginapan yang nyaman
+                          Semoga hari Anda menyenangkan:)
+                        """) 
+                else:  
+                    print('Pembayaran dilakukan saat ini juga di kasir')
+                    print("""
+                          Terima kasih telah melakukan reservasi di hotel kami
+                          Selamat menikmati penginapan yang nyaman
+                          Semoga hari Anda menyenangkan:)
+                        """) 
+                    
             else:
                 print ('Maaf uang Anda kurang sebesar :'+ 'Rp.' + str(kurang)+',00-')
                 #program akan menampilkan kekurangan uang yang harus dibayarkan lagi oleh tamu/penginap
@@ -339,6 +375,7 @@ while loop:
                 print('Terimakasih telah melakukan reservasi di Hotel kami :)')
                 sys.exit()
             #program selesai
+   
 
 
 exit()
