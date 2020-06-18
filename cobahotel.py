@@ -8,7 +8,7 @@
 
 
 
-from datetime import datetime, date
+from datetime import datetime
 from random import randint
 import os
 import sys
@@ -97,7 +97,7 @@ while loop:
 
     jenis = ['Regular','Deluxe ','Suite','President Suite']
     #jenis kamar berbentuk list akan dipanggil sesuai pilihan pengunjung
-    jenisPerMalam = [150000, 25000000, 400000, 500000]
+    jenisPerMalam = [150000, 250000, 400000, 500000]
     #tarif permalam untuk setiap jenis kamar dalam bentuk list akan dipanggil untuk menentukan tarif akhir...
     
     tipe = int(input('Masukkan tipe kamar yang Anda pilih : '))
@@ -107,7 +107,7 @@ while loop:
       
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn :  ")
+            tanggal = input("Masukkan tanggal CheckIn (dd mm yyy) :  ")
      
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
@@ -117,7 +117,7 @@ while loop:
                 #ketika format tanggal yang dimasukkan tidak sesuai, akan memunculkan pesan tersebut.
 
         while checkout is None:
-            tanggal = input("Masukkan tanggal CheckOut :  ")
+            tanggal = input("Masukkan tanggal CheckOut (dd mm yyyy) :  ")
 
             try:
                 checkout = datetime.strptime(tanggal, "%d %m %Y")
@@ -134,7 +134,7 @@ while loop:
 
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn :  ")
+            tanggal = input("Masukkan tanggal CheckIn (dd mm yyy) :  ")
  
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
@@ -142,7 +142,7 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
 
         while checkout is None:
-            tanggal = input("Masukkan tanggal CheckOut : ")
+            tanggal = input("Masukkan tanggal CheckOut (dd mm yyyy) : ")
 
             try:
                 checkout = datetime.strptime(tanggal, "%d %m %Y")
@@ -157,7 +157,7 @@ while loop:
 
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn : ")
+            tanggal = input("Masukkan tanggal CheckIn (dd mm yyyy) : ")
        
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
@@ -165,7 +165,7 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
                 
         while checkout is None: 
-            tanggal = input("Masukkan tanggal CheckOut : ")
+            tanggal = input("Masukkan tanggal CheckOut (dd mm yyyy) : ")
                 
             try:
                 checkout = datetime.strptime(tanggal, "%d %m %Y")
@@ -181,7 +181,7 @@ while loop:
      
         os.system('cls')
         while checkin is None:
-            tanggal = input("Masukkan tanggal CheckIn : ")
+            tanggal = input("Masukkan tanggal CheckIn (dd mm yyyy) : ")
             
             try:
                 checkin = datetime.strptime(tanggal, "%d %m %Y")
@@ -189,7 +189,7 @@ while loop:
                 print("Harus berformat \"<hari> <bulan> <tahun>\"")
 
         while checkout is None:
-            tanggal = input("Masukkan tanggal CheckOut : ")
+            tanggal = input("Masukkan tanggal CheckOut (dd mm yyyy) : ")
 
             try:
                 checkout = datetime.strptime(tanggal, "%d %m %Y")
@@ -204,7 +204,7 @@ while loop:
         #ketika resepsionis salah meng inputkan nomor (selain 1-4)
         continue
         
-        break
+
         
         
     #masuk kebagian kwitansi pembayaran
@@ -263,57 +263,56 @@ while loop:
         print('2. Debit Card') 
         
         pilih = input("Pilih yang Anda inginkan (1/2):  ")
+        print()
+        print()
         if pilih == "1":
-            cash = int(input('Uang dari penginap: Rp. '))
-            #resepsionis menginputkan uang yang diberikan oleh tamu/penginap
-            
-            kurang = str(tarif - cash)
-            kembali = str(cash - tarif)
-            pas = str(cash == tarif)
-            if (cash > tarif):
-                print ('Jumlah kembalian adalah :'+ 'Rp.' + str(kembali)+',00-')
-                #program akan menampilkan kembalian yang harus diberikan kepada tamu/penginap
-                bayar = input('Apakah anda akan melakukan pembayaran di awal/akhir? ')
-                if bayar == 'akhir':
-                    print('Pembayaran dilakukan saat check out dan wajib membayar DP minimal 25% dari tarif hotel tertera saat ini juga di kasir')
-                    print("""
-                          Terima kasih telah melakukan reservasi di hotel kami
-                          Selamat menikmati penginapan yang nyaman
-                          Semoga hari Anda menyenangkan:)
-                        """) 
-                else:  
-                    print('Pembayaran dilakukan saat ini juga di kasir')
-                    print("""
-                          Terima kasih telah melakukan reservasi di hotel kami
-                          Selamat menikmati penginapan yang nyaman
-                          Semoga hari Anda menyenangkan:)
-                        """) 
+            print ('Pilihan : ')
+            print ('1.Pembayaran di awal')
+            print ('2.Pembayaran di akhir')
+            print()
+            bayar = input('Apakah anda akan melakukan pembayaran di awal/akhir (1/2)? ')
+            if bayar == "1" :
+                print()
+                print('Pembayaran dilakukan saat ini juga di kasir')          
+                cash = int(input('Uang dari penginap: Rp. '))
+                #resepsionis menginputkan uang yang diberikan oleh tamu/penginap
                 
-            elif (cash == tarif):
-                print ('Jumlah uang yang anda bayarkan pas')
-                #program akan menampilkan kembalian yang harus diberikan kepada tamu/penginap
-                bayar = input('Apakah anda akan melakukan pembayaran di awal/akhir? ')
-                if bayar == 'akhir':
-                    print('Pembayaran dilakukan saat check out dan wajib membayar DP minimal 25% dari tarif hotel tertera saat ini juga di kasir')
+                kurang = str(tarif - cash)
+                kembali = str(cash - tarif)
+                pas = str(cash == tarif)
+                if (cash > tarif):
+                    print ('Jumlah kembalian adalah :'+ 'Rp.' + str(kembali)+',00-')
                     print("""
-                          Terima kasih telah melakukan reservasi di hotel kami
-                          Selamat menikmati penginapan yang nyaman
-                          Semoga hari Anda menyenangkan:)
-                        """) 
-                else:  
-                    print('Pembayaran dilakukan saat ini juga di kasir')
-                    print("""
-                          Terima kasih telah melakukan reservasi di hotel kami
-                          Selamat menikmati penginapan yang nyaman
-                          Semoga hari Anda menyenangkan:)
-                        """) 
+                              Terima kasih telah melakukan reservasi di hotel kami
+                              Selamat menikmati penginapan yang nyaman
+                              Semoga hari Anda menyenangkan:)
+                            """) 
                     
-            else:
-                print ('Maaf uang Anda kurang sebesar :'+ 'Rp.' + str(kurang)+',00-')
-                #program akan menampilkan kekurangan uang yang harus dibayarkan lagi oleh tamu/penginap
-                os.sys('cls')
-                print('Pastikan uang anda cukup')
-                continue
+                elif (cash == tarif):
+                    print ('Jumlah uang yang anda bayarkan pas')
+                    print("""
+                              Terima kasih telah melakukan reservasi di hotel kami
+                              Selamat menikmati penginapan yang nyaman
+                              Semoga hari Anda menyenangkan:)
+                            """) 
+                else:
+                    print ('Maaf uang Anda kurang sebesar :'+ 'Rp.' + str(kurang)+',00-')
+                    #program akan menampilkan kekurangan uang yang harus dibayarkan lagi oleh tamu/penginap
+                    os.sys('cls')
+                    print('Pastikan uang anda cukup')
+                    continue
+
+            
+            else :
+                
+                print('Pembayaran dilakukan saat check out dan wajib membayar DP minimal 25% dari tarif hotel tertera saat ini juga di kasir')
+                print("""
+                      Terima kasih telah melakukan reservasi di hotel kami
+                      Selamat menikmati penginapan yang nyaman
+                      Semoga hari Anda menyenangkan:)
+                    """) 
+
+                    
 
 
         else:
@@ -363,15 +362,16 @@ while loop:
                     
                     sys.exit()
                     
+                    
         ulang =''
-        while ulang!= 'y' and ulang!= 't':
+        while ulang!= 'y' and ulang!= 'n':
             #resepsionis akan menanyakan kembali kepada tamu/penginap ,
-            ulang = input('Apakah anda ingin memesan kamar lagi [y/t] : ')
+            ulang = input('Apakah anda ingin memesan kamar lagi [y/n] : ')
             if ulang == 'y':
                 os.system('cls')
                 print ('Silahkan pilih lagi')
                 #ketika ingin memesan lagi, program akan mengulang dari awal
-            elif ulang =='t':
+            elif ulang =='n':
                 print('Terimakasih telah melakukan reservasi di Hotel kami :)')
                 sys.exit()
             #program selesai
